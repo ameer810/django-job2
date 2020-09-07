@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block body %}
+
+{% for one in Apply_list %}
+ {% if request.user == one.job.owner %}
+ <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>{{one.user}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+
+    <div class="job_details_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="job_sumary">
+                        <div class="summery_header">
+                            <h3>Apply info</h3>
+                        </div>
+                        <div class="job_content">
+                            <ul>
+                                <li>User Apply: <span>{{one.user}}</span></li>
+                                <li>Job Name: <span>{{one.job}}</span></li>
+                                <li>Job Email: <span>{{one.email}}</span></li>
+                                <li>User Name: <span>{{one.name}}</span></li>
+                                <li>website: <span><a href="{{one.website}}">{{one.website}}</a></span></li>
+                                <li>Cv: <span>{{one.cv}}</span></li>
+                                <li>cover letter: <span>{{one.cover_letter}}</span></li>
+                                <li>Apply at: <span>{{one.created_at}}</span></li>
+                                <div>
+
+</div>
+
+                            </ul>
+                            <pre></pre>
+                            <pre></pre>
+                            <pre></pre>
+                            <pre></pre>
+                            <h4>to contact with him send Message to this Email  "{{one.email}}" </h4>
+                        </div>
+                         <div class="p-5">
+                    </div>
+
+                    </div>
+
+
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% endfor %}
+
+{% endblock body %}
